@@ -50,55 +50,48 @@
 
 <!--Navbar-->
   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block bg-dark" style="z-index: 2000;">
+      <div class="container-fluid" target="_blank">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link">
+          <strong>Bumi Kemah Bandung</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/perkemahan">Perkemahan</a>
+            </li>
+          </ul>
 
-    <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block bg-dark" style="z-index: 2000;">
-        <div class="container-fluid" target="_blank">
+          <ul class="navbar-nav d-flex flex-row">
 
-          <!-- Navbar brand -->
-            <a class="navbar-brand nav-link">
-              <strong>Bumi Kemah Bandung</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarExample01">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/perkemahan">Perkemahan</a>
-                </li>
-              </ul>
+            <!-- Login -->
+              <div class="d-flex align-items-center">
+                @if(\Auth::check())
+                  <a style="margin-right: 10px; color:white">You are logged in as  : {{\Auth::user()->email}}</a>
+                  <button type="button" class="btn btn-link px-3 me-2">
+                    <a href="{{url('logout')}}">Logout</a>
+                  </button>
+                @else
+                  <a class='error' style="margin-right: 10px"> You are not logged in  </a>
+                  
+                  <button type="button" class="btn btn-link px-3 me-2">
+                    <a href="{{url('login')}}">Login</a>
+                  </button>
+                @endif
+              </div>
+            <!-- Login -->
 
-              <ul class="navbar-nav d-flex flex-row">
-
-                <!-- Login -->
-                  <div class="d-flex align-items-center">
-                    @if(\Auth::check())
-                      <a style="margin-right: 10px; color:white">You are logged in as  : {{\Auth::user()->email}}</a>
-                      <button type="button" class="btn btn-link px-3 me-2">
-                        <a href="{{url('logout')}}">Logout</a>
-                      </button>
-                    @else
-                      <a class='error' style="margin-right: 10px"> You are not logged in  </a>
-                      
-                      <button type="button" class="btn btn-link px-3 me-2">
-                        <a href="{{url('login')}}">Login</a>
-                      </button>
-                    @endif
-                  </div>
-                <!-- Login -->
-
-              </ul>
-            </div>
-          <!-- Navbar brand -->
-
+          </ul>
         </div>
-      </nav>
-    <!-- Navbar -->
-    
+      </div>
+    </nav>
   </header>
 <!--Navbar-->
 
@@ -140,6 +133,9 @@
         </div>
       </div>
     </div>
+
+    <hr class="my-5" />
+
   </main>
 <!--Main layout-->
 
