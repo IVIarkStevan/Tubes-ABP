@@ -54,47 +54,44 @@
     <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block bg-dark" style="z-index: 2000;">
         <div class="container-fluid" target="_blank">
-
           <!-- Navbar brand -->
-            <a class="navbar-brand nav-link">
-              <strong>Bumi Kemah Bandung</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarExample01">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/perkemahan">Perkemahan</a>
-                </li>
-              </ul>
+          <a class="navbar-brand nav-link">
+            <strong>Bumi Kemah Bandung</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/perkemahan">Perkemahan</a>
+              </li>
+            </ul>
 
-              <ul class="navbar-nav d-flex flex-row">
+            <ul class="navbar-nav d-flex flex-row">
 
-                <!-- Login -->
-                  <div class="d-flex align-items-center">
-                    @if(\Auth::check())
-                      <a style="margin-right: 10px; color:white">You are logged in as  : {{\Auth::user()->email}}</a>
-                      <button type="button" class="btn btn-link px-3 me-2">
-                        <a href="{{url('logout')}}">Logout</a>
-                      </button>
-                    @else
-                      <a class='error' style="margin-right: 10px"> You are not logged in  </a>
-                      
-                      <button type="button" class="btn btn-link px-3 me-2">
-                        <a href="{{url('login')}}">Login</a>
-                      </button>
-                    @endif
-                  </div>
-                <!-- Login -->
+              <!-- Login -->
+                <div class="d-flex align-items-center">
+                  @if(\Auth::check())
+                    <a style="margin-right: 10px; color:white">You are logged in as  : {{\Auth::user()->email}}</a>
+                    <button type="button" class="btn btn-link px-3 me-2">
+                      <a href="{{url('logout')}}">Logout</a>
+                    </button>
+                  @else
+                    <a class='error' style="margin-right: 10px"> You are not logged in  </a>
+                    
+                    <button type="button" class="btn btn-link px-3 me-2">
+                      <a href="{{url('login')}}">Login</a>
+                    </button>
+                  @endif
+                </div>
+              <!-- Login -->
 
-              </ul>
-            </div>
-          <!-- Navbar brand -->
-
+            </ul>
+          </div>
         </div>
       </nav>
     <!-- Navbar -->
@@ -112,7 +109,7 @@
           <div class="carousel-inner">
             <!-- Single item -->
             <div class="carousel-item active">
-              <img src="/img/rancaupas/ranca1.jpg" class="d-block w-100" alt="image1"/>
+              <img src="/img/rancaupas/ranca1.jpg" class="d-block w-100" alt="image1">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -121,7 +118,7 @@
 
             <!-- Single item -->
             <div class="carousel-item">
-              <img src="/img/dusunbambu/dusun1.jpg" class="d-block w-100" alt="image2"/>
+              <img src="/img/dusunbambu/dusun1.jpg" class="d-block w-100" alt="image2">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -130,7 +127,7 @@
 
             <!-- Single item -->
             <div class="carousel-item">
-              <img src="/img/maribaya/mari1.jpg" class="d-block w-100" alt="image3"/>
+              <img src="/img/maribaya/mari1.jpg" class="d-block w-100" alt="image3">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -195,7 +192,7 @@
           <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
 
           <div class="row">
-
+            
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
