@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Kemah;
 use App\Http\Controllers\KemahController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,9 @@ Route::get('/perkemahan', function(){
 });
 
 Route::get('perkemahan/{kemah:slug}', [KemahController::class, 'show']);
+
+Route::get('/login', [AuthController::class,"loginView"]);
+Route::get('/register', [AuthController::class,"registerView"]);
+Route::post('/do-login', [AuthController::class,"doLogin"]);
+Route::post('/do-register', [AuthController::class,"doRegister"]);
+Route::get('/logout', [AuthController::class,"logout"]);
