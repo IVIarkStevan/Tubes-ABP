@@ -55,7 +55,6 @@
 
 <!--Navbar-->
   <header>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block bg-dark" style="z-index: 2000;">
       <div class="container-fluid" target="_blank">
         <!-- Navbar brand -->
@@ -76,33 +75,28 @@
           </ul>
 
           <ul class="navbar-nav d-flex flex-row">
-            <!-- Login -->
-            <div class="d-flex align-items-center">
-              @if(\Auth::check())
-                <a style="margin-right: 10px; color:white">You are logged in as  : {{\Auth::user()->email}}</a>
-                <button type="button" class="btn btn-link px-3 me-2">
-                  <a href="{{url('logout')}}">Logout</a>
-                </button>
-              @else
-                <a class='error' style="margin-right: 10px"> You are not logged in  </a>
-                
-                <button type="button" class="btn btn-link px-3 me-2">
-                  <a href="{{url('login')}}">Login</a>
-                </button>
-              @endif
-
-              {{-- <button type="button" class="btn btn-link px-3 me-2">
-                <a href="/login">Login</a>
-              </button> --}}
-
-            </div>
 
             <!-- Login -->
+              <div class="d-flex align-items-center">
+                @if(\Auth::check())
+                  <a style="margin-right: 10px; color:white">You are logged in as  : {{\Auth::user()->email}}</a>
+                  <button type="button" class="btn btn-link px-3 me-2">
+                    <a href="{{url('logout')}}">Logout</a>
+                  </button>
+                @else
+                  <a class='error' style="margin-right: 10px"> You are not logged in  </a>
+                  
+                  <button type="button" class="btn btn-link px-3 me-2">
+                    <a href="{{url('login')}}">Login</a>
+                  </button>
+                @endif
+              </div>
+            <!-- Login -->
+
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Navbar -->
   </header>
 <!--Navbar-->
 
@@ -135,7 +129,7 @@
                   <input type="password" name="confirm_password" class="form-control" />
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary" style="margin-top: 10px">REGISTER</button>
+                  <button type="submit" class="btn btn-primary mt-5">REGISTER</button>
                 </div>
               </form>
               
