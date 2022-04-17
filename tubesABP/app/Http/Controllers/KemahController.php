@@ -9,13 +9,14 @@ class KemahController extends Controller
 {
   public function index(){
     return view('home', [
-      "title" => "Home"
+      "title" => "Home",
+      "perkemahan" => Kemah::all()
     ]);
   }
 
   public function show(Kemah $kemah){
     return view('kemah', [
-      "title" => "kemah",
+      "title" => "Kemah",
       "kemah" => $kemah
     ]);
   }
