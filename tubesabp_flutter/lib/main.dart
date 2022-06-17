@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+import 'perkemahan.dart';
+import 'kemah.dart';
 
-class Kemah {
-  final String title;
-  final String description;
-
-  const Kemah(this.title, this.description);
+void main() {
+  runApp(KemahApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  static const String _title = 'Tubes ABP - Kelompok 2';
+class KemahApp extends StatelessWidget {
+  const KemahApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = ThemeData();
+
     return MaterialApp(
-      title: _title,
-      home: WelcomeScreen(
-        kemahs: List.generate(
-          20,
-          (i) => Kemah(
-            'Perkemahan $i',
-            'Deskripsi perkemahan $i',
-          ),
+      title: 'Tubes ABP - Kelompok 2',
+      theme: theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+          primary: Colors.grey,
+          secondary: Colors.black,
         ),
       ),
+      home: const WelcomeScreen(),
     );
   }
 }
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key, required this.kemahs});
-  // final List<String> entries = <String>['A', 'B', 'C'];
-  // final List<int> colorCodes = <int>[600, 500, 100];
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
-  final List<Kemah> kemahs;
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
 
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -60,103 +57,58 @@ class WelcomeScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            const Center(
+            Center(
               child: Text('Welcome!'),
-              // child: GridView.count(
-              //   primary: false,
-              //   padding: const EdgeInsets.all(20),
-              //   crossAxisSpacing: 10,
-              //   mainAxisSpacing: 10,
-              //   crossAxisCount: 2,
-              //   childAspectRatio: (1 / 1),
-              //   children: <Widget>[
-              //     Container(
-              //       color: Colors.white,
-              //       child: Center(
-              //         child: const Text("Test Praktikum"),
-              //       ),
-              //     ),
-              //     Container(
-              //       padding: const EdgeInsets.all(8),
-              //       color: Colors.brown,
-              //       child: const Text('grid 1'),
-              //     ),
-              //     Container(
-              //       padding: const EdgeInsets.all(8),
-              //       color: Colors.blue,
-              //       child: const Text('grid 2'),
-              //     ),
-              //     Container(
-              //       padding: const EdgeInsets.all(8),
-              //       color: Colors.green,
-              //       child: const Text('grid 3'),
-              //     ),
-              //     Container(
-              //       padding: const EdgeInsets.all(8),
-              //       color: Colors.black,
-              //       child: const Text('grid 4'),
-              //     ),
-              //     Container(
-              //       padding: const EdgeInsets.all(8),
-              //       color: Colors.red,
-              //       child: const Text('grid 5'),
-              //     ),
-              //   ],
-              // ),
             ),
             Center(
               child: ListView.builder(
-                itemCount: kemahs.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(kemahs[index].title),
+                itemCount: Perkemahan.samples.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              Perkemahan(kemah: kemahs[index]),
+                          builder: (context) {
+                            return Kemah(perkemahan: Perkemahan.samples[index]);
+                          },
                         ),
                       );
                     },
+                    // 11
+                    child: buildKemahCard(Perkemahan.samples[index]),
                   );
                 },
               ),
-              // child: ListView.separated(
-              //   padding: const EdgeInsets.all(8),
-              //   itemCount: entries.length,
-              //   itemBuilder: (BuildContext context, int index) {
-              //     return Container(
-              //       height: 50,
-              //       color: Colors.amber[colorCodes[index]],
-              //       child: Center(child: Text('Entry ${entries[index]}')),
-              //     );
-              //   },
-              //   separatorBuilder: (BuildContext context, int index) =>
-              //       const Divider(),
-              // ),
             ),
           ],
         ),
       ),
     );
   }
-}
 
-class Perkemahan extends StatelessWidget {
-  const Perkemahan({super.key, required this.kemah});
-
-  final Kemah kemah;
-
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(kemah.title),
-        centerTitle: true,
-      ),
-      body: Padding(
+  Widget buildKemahCard(Perkemahan kemah) {
+    return Card(
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Text(kemah.description),
+        child: Column(
+          children: <Widget>[
+            Image(image: AssetImage(kemah.imageUrl)),
+            const SizedBox(
+              height: 14.0,
+            ),
+            Text(
+              kemah.label,
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Palatino',
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
