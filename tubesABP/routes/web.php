@@ -21,6 +21,8 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [KemahController::class, 'index']);
 
+// SOAL COTS
+//Fill this missing part(dhialif)
 Route::get('/perkemahan', function(){
     return view('perkemahan', [
         "title" => "Perkemahan",
@@ -28,7 +30,9 @@ Route::get('/perkemahan', function(){
     ]);
 });
 
-Route::get('perkemahan/{kemah:slug}', [KemahController::class, 'show']);
+Route::get('perkemahan/{kemah:slug}', [KemahController::class, 'kemah']);
+
+// Route::post('/favorites', [KemahController::class, 'favorites']);
 
 Route::get('/login', [AuthController::class,"loginView"]);
 Route::get('/register', [AuthController::class,"registerView"]);

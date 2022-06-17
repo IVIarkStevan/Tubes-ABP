@@ -14,10 +14,18 @@ class KemahController extends Controller
     ]);
   }
 
-  public function show(Kemah $kemah){
+  public function kemah(Kemah $kemah){
     return view('kemah', [
       "title" => "Kemah",
       "kemah" => $kemah
     ]);
   }
+
+  // public function favorites(){    
+  //   return view('favorites', [
+  //       "title" => "Favorites",
+  //       "perkemahan" => Kemah::all(),
+  //       "favorites" => 
+  //   ]);
+  // }
 }
