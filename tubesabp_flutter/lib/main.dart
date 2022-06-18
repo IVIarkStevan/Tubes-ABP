@@ -4,7 +4,7 @@ import 'perkemahan.dart';
 import 'kemah.dart';
 
 void main() {
-  runApp(KemahApp());
+  runApp(const KemahApp());
 }
 
 class KemahApp extends StatelessWidget {
@@ -58,7 +58,37 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         body: TabBarView(
           children: <Widget>[
             Center(
-              child: Text('Welcome!'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
+                  SizedBox(
+                    height: 300,
+                    width: double.infinity,
+                    child: Image(
+                      image: AssetImage('assets/img/cover.jpg'),
+                    ),
+                  ),
+                  Text(
+                    'Bumi Kemah Bandung',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      height: 2,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.',
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.left,
+                  ),
+                  Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum alias, unde optio accusantium soluta, iusto molestiae adipisci et?',
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
             ),
             Center(
               child: ListView.builder(
