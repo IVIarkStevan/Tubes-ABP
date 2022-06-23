@@ -15,7 +15,7 @@ class KemahApp extends StatelessWidget {
     final ThemeData theme = ThemeData();
 
     return MaterialApp(
-      title: 'Tubes ABP - Kelompok 2',
+      title: 'Bumi Kemah Bandung',
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
           primary: Colors.grey,
@@ -43,7 +43,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Tubes ABP'),
+          title: const Text('Bumi Kemah Bandung'),
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(
@@ -105,7 +105,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                       );
                     },
-                    // 11
                     child: buildKemahCard(Perkemahan.samples[index]),
                   );
                 },
