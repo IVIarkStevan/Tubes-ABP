@@ -65,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: 300,
                     width: double.infinity,
                     child: Image(
-                      image: AssetImage('assets/img/cover.jpg'),
+                      image: AssetImage('assets/cover.jpg'),
                     ),
                   ),
                   Text(
