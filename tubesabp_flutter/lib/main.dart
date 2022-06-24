@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'fooderlich_theme.dart';
 
 import 'perkemahan.dart';
 import 'kemah.dart';
@@ -12,16 +13,11 @@ class KemahApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = ThemeData();
+    final theme = FooderlichTheme.dark();
 
     return MaterialApp(
       title: 'Bumi Kemah Bandung',
-      theme: theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(
-          primary: Colors.grey,
-          secondary: Colors.black,
-        ),
-      ),
+      theme: theme,
       home: const WelcomeScreen(),
     );
   }
@@ -35,15 +31,21 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  final theme = FooderlichTheme.dark();
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       initialIndex: 1,
       length: 2,
       child: Scaffold(
+        // backgroundColor: Colors.blue,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Bumi Kemah Bandung'),
+          title: Text(
+            'Bumi Kemah Bandung',
+            style: theme.textTheme.headline6,
+          ),
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(
@@ -57,12 +59,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Center(
+            SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const <Widget>[
                   SizedBox(
-                    height: 300,
+                    height: 200,
                     width: double.infinity,
                     child: Image(
                       image: AssetImage('assets/cover.jpg'),
@@ -75,17 +76,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       fontWeight: FontWeight.bold,
                       height: 2,
                     ),
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
-                  Text(
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.',
-                    style: TextStyle(fontSize: 18),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum alias, unde optio accusantium soluta, iusto molestiae adipisci et?',
-                    style: TextStyle(fontSize: 18),
-                    textAlign: TextAlign.left,
+                  SizedBox(
+                    width: 300,
+                    child: Text(
+                      'Bumi kemah bandung merupakan sebuah aplikasi untuk mencari tempat kemah. Tujuan kami membuat aplikasi ini adalah untuk membantu user dalam mempermudah pencarian tempat kemah dibandung, Apalikasi ini akan tersedia untuk web dan juga secara mobile di handphone anda.',
+                      style: TextStyle(fontSize: 18),
+                      textAlign: TextAlign.justify,
+                    ),
                   ),
                 ],
               ),
