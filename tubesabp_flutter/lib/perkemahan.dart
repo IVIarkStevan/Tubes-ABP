@@ -60,15 +60,5 @@ class Perkemahan {
       'http://www.pineforestcamp.web.id/',
       '',
     ),
-    Perkemahan(
-      'Lorem Ipsum',
-      'assets/img/lorem/lorem1.jpg',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis harum quisquam, sequi atque illo magni, ipsa ratione unde veritatis ullam odio reiciendis, quibusdam dolore. Quis non blanditiis quam ipsum quos provident necessitatibus atque rerum inventore et, ratione laboriosam impedit officiis officia minus magni ducimus, id neque, maxime reprehenderit? Repudiandae sapiente dignissimos nobis tempora id et rem iste ab voluptas nihil suscipit aliquid atque harum cupiditate maiores quasi, ut dolorum non veniam beatae mollitia, similique molestias error? Commodi eaque ea reiciendis quas expedita officia voluptates excepturi delectus rerum reprehenderit aut animi exercitationem quisquam numquam earum, saepe repellendus cupiditate sed tenetur! Explicabo..',
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      'Rp999.999.999 per lorem',
-      'Lorem, ipsum, dolor, sit, dan amet',
-      'https://loremipsum.io/',
-      '999999999',
-    ),
   ];
 }
