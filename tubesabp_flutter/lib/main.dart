@@ -18,6 +18,7 @@ class KemahApp extends StatelessWidget {
       title: 'Bumi Kemah Bandung',
       theme: theme,
       home: const WelcomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
