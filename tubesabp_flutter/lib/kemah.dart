@@ -35,7 +35,6 @@ class _KemahState extends State<Kemah> {
             SizedBox(
               width: 300,
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     widget.perkemahan.label,
@@ -45,15 +44,6 @@ class _KemahState extends State<Kemah> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  // const Text(
-                  //   'Deskripsi:',
-                  //   style: TextStyle(
-                  //     fontSize: 18,
-                  //     fontWeight: FontWeight.bold,
-                  //     height: 2,
-                  //   ),
-                  //   textAlign: TextAlign.left,
-                  // ),
                   Text(
                     widget.perkemahan.description,
                     style: const TextStyle(fontSize: 18),
